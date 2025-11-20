@@ -3,51 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webnexa AI | Scale Your Business with Intelligent Automation</title>
-    <meta name="description" content="Webnexa AI specializes in scaling businesses through custom AI automation, chatbots, and customer acquisition systems." />
+    <title>Webnexa AI | Scale Your Business with AI Automation</title>
+    <meta name="description" content="Custom AI systems that capture and convert leads 24/7. We build automation infrastructures that save 20+ hours weekly and generate 300% ROI." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
             },
             colors: {
               primary: {
-                50: '#f0f9ff',
-                100: '#e0f2fe',
-                500: '#0ea5e9', // Sky blue
-                600: '#0284c7',
-                700: '#0369a1',
+                50: '#eff6ff',
+                100: '#dbeafe',
+                500: '#2563eb', 
+                600: '#1d4ed8', // Deeper blue
+                700: '#1e40af',
+                900: '#1e3a8a',
               },
-              accent: {
-                500: '#8b5cf6', // Violet
-                600: '#7c3aed',
-              },
-              dark: {
-                900: '#020617', // Slate 950
-                800: '#0f172a', // Slate 900
-                700: '#1e293b', // Slate 800
+              slate: {
+                850: '#1e293b',
+                900: '#0f172a',
+                950: '#020617', 
               }
             },
             animation: {
-              'marquee': 'marquee 25s linear infinite',
-              'float': 'float 6s ease-in-out infinite',
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'marquee': 'marquee 40s linear infinite',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
             },
             keyframes: {
               marquee: {
                 '0%': { transform: 'translateX(0%)' },
-                '100%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(-50%)' },
               },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             }
           },
@@ -57,35 +53,32 @@
     <style>
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #020617;
+        background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #1e293b;
-        border-radius: 5px;
+        background: #cbd5e1;
+        border-radius: 4px;
       }
-      ::-webkit-scrollbar-thumb:hover {
+      .dark ::-webkit-scrollbar-thumb {
         background: #334155;
       }
       
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      
-      .gradient-text {
-        background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
-      .hero-glow {
-        background: radial-gradient(circle at center, rgba(56, 189, 248, 0.15) 0%, rgba(2, 6, 23, 0) 70%);
+      /* Clean selection color */
+      ::selection {
+        background-color: #000;
+        color: #fff;
+      }
+      .dark ::selection {
+        background-color: #fff;
+        color: #000;
       }
     </style>
   <script type="importmap">
@@ -99,7 +92,7 @@
 }
 </script>
 </head>
-  <body class="bg-dark-900 text-slate-50 antialiased selection:bg-primary-500 selection:text-white overflow-x-hidden">
+  <body class="bg-white text-slate-950 dark:bg-black dark:text-white transition-colors duration-300">
     <div id="root"></div>
   </body>
 </html>
